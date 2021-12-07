@@ -1,12 +1,16 @@
-public class EmployWage
-{
+public class EmployWage {
     public static void main(String[] args) {
-        int ful_time = 1;
-        double check = Math.floor(Math.random() * 10) % 2;
-        System.out.println("Emply Attendance Status="+check);
-        if (check == ful_time)
-            System.out.println("Employ is present");
+        int full_time=1;
+        int emp_rate=20;
+        int emp_hrs, emp_wage;
+        double check=Math.floor(Math.random() *10)%2;
+        System.out.println("Employ Attendance Status="+check);
+        if (check==full_time)
+            emp_hrs=8;
         else
-            System.out.println("Employ is absent");
+            emp_hrs=0;
+        emp_wage=emp_hrs*emp_rate;
+        System.out.println("Employ Wage: " + emp_wage);
     }
 }
+
