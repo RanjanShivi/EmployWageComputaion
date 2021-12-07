@@ -1,14 +1,15 @@
-public class EmployWage{
+public class EmployWage {
     public static final int part_time=1;
     public static final int full_time=2;
     public static final int emp_rate=20;
     public static final int work_day=2;
+    public static final int max_hrs=10;
 
     public static void main(String[] args) {
-        int emp_hrs, emp_wage;
-        int tot_wage=0;
-        for(int i=0;i<work_day;i++)
+        int emp_hrs=0,tot_hrs=0,tot_day=0;
+        while(tot_hrs<=max_hrs && tot_day<work_day)
         {
+            tot_day++;
             int  check= (int) Math.floor(Math.random() *10)%3;
             System.out.println("Employ Attendance Status="+check);
             switch (check) {
@@ -21,11 +22,11 @@ public class EmployWage{
                 default:
                     emp_hrs = 0;
             }
-            emp_wage=emp_hrs*emp_rate;
-            tot_wage +=emp_wage;
-            System.out.println("Employ Wage: " + emp_wage);
+            tot_hrs+=emp_hrs;
+            System.out.println("Day= " + tot_day + "Emp_hrs: " + emp_hrs);
         }
-        System.out.println("Total Emp Wage: " + tot_wage);
+        int tot_empwage=tot_hrs*emp_rate;
+        System.out.println("Total Emp Wage: " + tot_empwage);
 
     }
 }
